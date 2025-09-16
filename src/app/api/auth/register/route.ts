@@ -29,6 +29,19 @@ export async function POST(request: NextRequest) {
   const started = Date.now();
   const requestId = crypto.randomUUID();
   try {
+    if (process.env.VERCEL && process.env.DATABASE_URL?.startsWith('file:')) {
+      return NextResponse.json(
+        {
+          error:
+            'Ephemeral SQLite not supported in Vercel for write operations',
+          detail:
+            'You are deploying with a file-based SQLite DATABASE_URL on Vercel. The serverless runtime has a read-only filesystem; write attempts (user creation) will fail. Migrate to a hosted database (e.g. Postgres on Neon/Supabase or PlanetScale MySQL).',
+          requestId,
+          ms: Date.now() - started,
+        },
+        { status: 500 },
+      );
+    }
     const json = await request.json().catch(() => null);
     if (!json) {
       return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });

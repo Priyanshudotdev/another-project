@@ -60,53 +60,25 @@ export default function SignUpPage() {
     e.preventDefault();
     setError("");
     setSuccess("");
-
-    if (!validateForm()) {
-      return;
-    }
-
+    if (!validateForm()) return;
     setIsLoading(true);
-
     try {
-      const response = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        // Auto login after signup
-        const loginRes = await fetch("/api/auth/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: formData.email, password: formData.password }),
-        });
-        if (loginRes.ok) {
-          const loginData = await loginRes.json();
-          try {
-            if (typeof window !== "undefined" && loginData?.user) {
-              localStorage.setItem("user", JSON.stringify(loginData.user));
-            }
-          } catch {}
-          router.push("/");
-          router.refresh();
-          return;
-        }
-        // Fallback: redirect to sign in if auto-login failed
-        router.push("/auth/signin");
-      } else {
-        setError(data.error || "An error occurred. Please try again.");
+      const fakeUser = {
+        id: crypto.randomUUID(),
+        email: formData.email,
+        name: formData.name,
+        role: 'CUSTOMER',
+        createdAt: new Date().toISOString(),
+      };
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('user', JSON.stringify(fakeUser));
+        window.dispatchEvent(new Event('auth-change'));
+        document.cookie = 'auth_token=dummy; path=/; max-age=' + 60 * 60 * 24 * 7;
       }
-    } catch (error) {
-      setError("An error occurred. Please try again.");
+      router.push('/');
+      router.refresh();
+    } catch {
+      setError('Failed to create local session');
     } finally {
       setIsLoading(false);
     }

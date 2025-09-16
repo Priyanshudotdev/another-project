@@ -25,31 +25,25 @@ function SignInContent() {
     e.preventDefault();
     setIsLoading(true);
     setError("");
-
+    // Dummy auth: trust inputs
     try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setError(data.error || "Invalid email or password");
-        return;
+      const fakeUser = {
+        id: crypto.randomUUID(),
+        email,
+        name: email.split('@')[0] || 'User',
+        role: 'CUSTOMER',
+        createdAt: new Date().toISOString(),
+      };
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('user', JSON.stringify(fakeUser));
+        window.dispatchEvent(new Event('auth-change'));
+        // lightweight cookie for middleware detection
+        document.cookie = 'auth_token=dummy; path=/; max-age=' + 60 * 60 * 24 * 7;
       }
-
-      // Cookie set server-side; store user locally and redirect
-      const data = await res.json();
-      try {
-        if (typeof window !== "undefined" && data?.user) {
-          localStorage.setItem("user", JSON.stringify(data.user));
-        }
-      } catch {}
-      router.push(callbackUrl || "/");
+      router.push(callbackUrl || '/');
       router.refresh();
-    } catch (error) {
-      setError("An error occurred. Please try again.");
+    } catch {
+      setError('Failed to store session locally');
     } finally {
       setIsLoading(false);
     }

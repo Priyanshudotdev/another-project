@@ -43,6 +43,11 @@ export const metadata: Metadata = {
     description:
       "Shop thousands of products at competitive prices with fast shipping and excellent customer service.",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

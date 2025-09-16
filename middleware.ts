@@ -19,9 +19,9 @@ export function middleware(req: NextRequest) {
 
   const token = req.cookies.get('auth_token')?.value;
   if (!token) {
-    const signInUrl = new URL('/auth/signin', req.url);
-    signInUrl.searchParams.set('callbackUrl', pathname || '/');
-    return NextResponse.redirect(signInUrl);
+    const signUpUrl = new URL('/auth/signup', req.url);
+    signUpUrl.searchParams.set('callbackUrl', pathname || '/');
+    return NextResponse.redirect(signUpUrl);
   }
   return NextResponse.next();
 }

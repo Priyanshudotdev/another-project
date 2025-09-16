@@ -1,13 +1,16 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Hero } from "@/components/hero";
 import { ProductGrid } from "@/components/product-grid";
 import { CategoryShowcase } from "@/components/category-showcase";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
-export default async function Home() {
-  const token = (await cookies()).get("auth_token")?.value;
-  if (!token) {
-    redirect("/auth/signin?callbackUrl=/");
+export default function Home() {
+  // Middleware ensures only authenticated users reach here; keep minimal in component.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) {
+    return <div className="min-h-screen flex items-center justify-center bg-background text-muted-foreground">Loading...</div>;
   }
   return (
     <div className="min-h-screen bg-background">

@@ -19,6 +19,17 @@ export async function POST(request: NextRequest) {
   const requestId = crypto.randomUUID();
   const started = Date.now();
   try {
+    if (process.env.VERCEL && process.env.DATABASE_URL?.startsWith('file:')) {
+      return NextResponse.json(
+        {
+          error: 'Ephemeral SQLite not supported in Vercel',
+          detail:
+            'Switch DATABASE_URL to a hosted database; file: SQLite cannot persist across serverless invocations.',
+          requestId,
+        },
+        { status: 500 },
+      );
+    }
     const json = await request.json().catch(() => null);
     if (!json) {
       return NextResponse.json(

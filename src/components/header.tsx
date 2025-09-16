@@ -31,25 +31,25 @@ export function Header() {
   const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
-    let ignore = false;
-    async function load() {
+    function readLocal() {
       try {
-        const res = await fetch("/api/auth/me", { cache: "no-store" });
-        if (!ignore && res.ok) {
-          const data = await res.json();
-          setUser(data.user);
-        } else if (!ignore) {
-          setUser(null);
-        }
-      } catch {
-        if (!ignore) setUser(null);
-      } finally {
-        if (!ignore) setAuthLoading(false);
-      }
+        const raw = typeof window !== 'undefined' ? localStorage.getItem('user') : null;
+        if (raw) setUser(JSON.parse(raw)); else setUser(null);
+      } catch { setUser(null); }
+      setAuthLoading(false);
     }
-    load();
+    readLocal();
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'user') {
+        readLocal();
+      }
+    };
+    const onAuthChange = () => readLocal();
+    window.addEventListener('storage', onStorage);
+    window.addEventListener('auth-change', onAuthChange as EventListener);
     return () => {
-      ignore = true;
+      window.removeEventListener('storage', onStorage);
+      window.removeEventListener('auth-change', onAuthChange as EventListener);
     };
   }, []);
 
@@ -103,18 +103,12 @@ export function Header() {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={async () => {
-                    try {
-                      await fetch("/api/auth/logout", { method: "POST" });
-                    } finally {
-                      try { localStorage.removeItem("user"); } catch {}
-                      // Reload to update auth-dependent UI
-                      window.location.reload();
-                    }
+                  onClick={() => {
+                    try { localStorage.removeItem('user'); } catch {}
+                    document.cookie = 'auth_token=deleted; path=/; max-age=0';
+                    window.dispatchEvent(new Event('auth-change'));
                   }}
-                >
-                  Logout
-                </Button>
+                >Logout</Button>
               </div>
             ) : (
               <Button variant="ghost" size="sm" asChild>

@@ -79,39 +79,30 @@ export default function AccountPage() {
   }, []);
 
   useEffect(() => {
-    let ignore = false;
-    async function load() {
-      try {
-        const [profileRes, ordersRes] = await Promise.all([
-          fetch("/api/account/profile", { cache: "no-store" }),
-          fetch("/api/orders?limit=5", { cache: "no-store" }),
-        ]);
-        if (!ignore) {
-          if (profileRes.ok) {
-            const p = await profileRes.json();
-            setProfile(p);
-            setEditForm({ name: p.user?.name ?? "", email: p.user?.email ?? "", phone: "" });
-          }
-          if (ordersRes.ok) {
-            const o = await ordersRes.json();
-            const mapped: Order[] = (o.orders || []).map((ord: any) => ({
-              id: ord.id,
-              orderNumber: ord.orderNumber,
-              createdAt: ord.createdAt,
-              status: ord.status,
-              total: ord.total,
-              items: ord.items || [],
-            }));
-            setOrders(mapped);
-          }
-        }
-      } finally {
-        if (!ignore) setLoading(false);
-      }
-    }
-    load();
-    return () => { ignore = true; };
-  }, []);
+    // Dummy data loader: simulate small delay then mark loading false
+    const timer = setTimeout(() => {
+      setOrders((prev) => prev.length ? prev : Array.from({ length: 3 }).map((_, i) => ({
+        id: crypto.randomUUID(),
+        orderNumber: `ORD-${Date.now()}-${i}`,
+        createdAt: new Date(Date.now() - i * 86400000).toISOString(),
+        status: i === 0 ? 'delivered' : i === 1 ? 'processing' : 'pending',
+        total: Number((Math.random() * 200 + 20).toFixed(2)),
+        items: Array.from({ length: Math.floor(Math.random() * 3) + 1 }).map(() => ({ id: crypto.randomUUID() })),
+      })));
+      setProfile((p) => p ? p : {
+        user: {
+          id: crypto.randomUUID(),
+          name: editForm.name || 'Guest User',
+          email: editForm.email || 'guest@example.com',
+          role: 'CUSTOMER',
+          createdAt: new Date().toISOString(),
+        },
+        addresses: [],
+      });
+      setLoading(false);
+    }, 400);
+    return () => clearTimeout(timer);
+  }, [editForm.name, editForm.email]);
 
   const getStatusBadge = (status: string) => {
     const statusConfig = {
@@ -131,13 +122,8 @@ export default function AccountPage() {
   };
 
   const handleSignOut = async () => {
-    try {
-      await fetch("/api/auth/logout", { method: "POST" });
-    } catch {}
-    try {
-      localStorage.removeItem("user");
-    } catch {}
-    window.location.href = "/auth/signin";
+    try { localStorage.removeItem('user'); } catch {}
+    window.location.href = '/auth/signin';
   };
 
   return (
