@@ -35,7 +35,8 @@ export const PRODUCTS: Product[] = [
     name: 'Wireless Bluetooth Headphones',
     price: 79.99,
     comparePrice: 99.99,
-    image: 'https://source.unsplash.com/featured/800x600?headphones,audio',
+    image:
+      'https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'wireless-bluetooth-headphones',
     rating: 4.5,
     reviewCount: 128,
@@ -48,7 +49,8 @@ export const PRODUCTS: Product[] = [
     name: 'Smart Fitness Watch',
     price: 199.99,
     comparePrice: 249.99,
-    image: 'https://source.unsplash.com/featured/800x600?smartwatch,wearable',
+    image:
+      'https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'smart-fitness-watch',
     rating: 4.8,
     reviewCount: 89,
@@ -61,7 +63,8 @@ export const PRODUCTS: Product[] = [
     name: 'Portable Bluetooth Speaker',
     price: 59.99,
     comparePrice: null,
-    image: 'https://source.unsplash.com/featured/800x600?bluetooth,speaker',
+    image:
+      'https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'portable-bluetooth-speaker',
     rating: 4.4,
     reviewCount: 167,
@@ -74,7 +77,8 @@ export const PRODUCTS: Product[] = [
     name: 'Wireless Charging Pad',
     price: 29.99,
     comparePrice: 39.99,
-    image: 'https://source.unsplash.com/featured/800x600?wireless,charger',
+    image:
+      'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'wireless-charging-pad',
     rating: 4.6,
     reviewCount: 203,
@@ -87,7 +91,8 @@ export const PRODUCTS: Product[] = [
     name: 'Noise Cancelling Earbuds',
     price: 99.99,
     comparePrice: 129.99,
-    image: 'https://source.unsplash.com/featured/800x600?earbuds,wireless',
+    image:
+      'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'noise-cancelling-earbuds',
     rating: 4.2,
     reviewCount: 74,
@@ -100,7 +105,8 @@ export const PRODUCTS: Product[] = [
     name: 'Smart Home Hub',
     price: 89.99,
     comparePrice: 119.99,
-    image: 'https://source.unsplash.com/featured/800x600?smart,home,hub',
+    image:
+      'https://images.pexels.com/photos/3931638/pexels-photo-3931638.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'smart-home-hub',
     rating: 4.7,
     reviewCount: 94,
@@ -113,7 +119,8 @@ export const PRODUCTS: Product[] = [
     name: '4K Action Camera',
     price: 149.99,
     comparePrice: 179.99,
-    image: 'https://source.unsplash.com/featured/800x600?action,camera',
+    image:
+      'https://images.pexels.com/photos/226597/pexels-photo-226597.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: '4k-action-camera',
     rating: 4.1,
     reviewCount: 61,
@@ -126,7 +133,8 @@ export const PRODUCTS: Product[] = [
     name: 'USB-C Fast Charger 30W',
     price: 24.99,
     comparePrice: 29.99,
-    image: 'https://source.unsplash.com/featured/800x600?usb-c,charger',
+    image:
+      'https://images.pexels.com/photos/6633920/pexels-photo-6633920.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'usb-c-fast-charger-30w',
     rating: 4.5,
     reviewCount: 210,
@@ -140,7 +148,7 @@ export const PRODUCTS: Product[] = [
     price: 39.99,
     comparePrice: 49.99,
     image:
-      'https://source.unsplash.com/featured/800x600?powerbank,portable,charger',
+      'https://images.pexels.com/photos/14742335/pexels-photo-14742335.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'portable-power-bank-20000',
     rating: 4.6,
     reviewCount: 330,
@@ -153,7 +161,8 @@ export const PRODUCTS: Product[] = [
     name: 'Smart LED Light Bulb (4-Pack)',
     price: 34.99,
     comparePrice: 44.99,
-    image: 'https://source.unsplash.com/featured/800x600?smart,bulb,light',
+    image:
+      'https://images.pexels.com/photos/8992923/pexels-photo-8992923.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'smart-led-light-bulb-4-pack',
     rating: 4.4,
     reviewCount: 145,
@@ -166,7 +175,8 @@ export const PRODUCTS: Product[] = [
     name: '1080p Webcam with Mic',
     price: 49.99,
     comparePrice: 59.99,
-    image: 'https://source.unsplash.com/featured/800x600?webcam,computer',
+    image:
+      'https://images.pexels.com/photos/6913718/pexels-photo-6913718.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: '1080p-webcam-with-mic',
     rating: 4.3,
     reviewCount: 98,
@@ -179,7 +189,8 @@ export const PRODUCTS: Product[] = [
     name: 'Mechanical Gaming Keyboard',
     price: 89.99,
     comparePrice: 109.99,
-    image: 'https://source.unsplash.com/featured/800x600?mechanical,keyboard',
+    image:
+      'https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'mechanical-gaming-keyboard',
     rating: 4.7,
     reviewCount: 180,
@@ -194,7 +205,8 @@ export const PRODUCTS: Product[] = [
     name: 'Classic Cotton T-Shirt',
     price: 19.99,
     comparePrice: 24.99,
-    image: 'https://source.unsplash.com/featured/800x600?tshirt,fashion',
+    image:
+      'https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'classic-cotton-tshirt',
     rating: 4.3,
     reviewCount: 220,
@@ -207,7 +219,8 @@ export const PRODUCTS: Product[] = [
     name: 'Slim Fit Jeans',
     price: 49.99,
     comparePrice: 59.99,
-    image: 'https://source.unsplash.com/featured/800x600?jeans,denim',
+    image:
+      'https://images.pexels.com/photos/52518/jeans-pants-blue-shop-52518.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'slim-fit-jeans',
     rating: 4.5,
     reviewCount: 180,
@@ -220,7 +233,8 @@ export const PRODUCTS: Product[] = [
     name: 'Hooded Sweatshirt',
     price: 39.99,
     comparePrice: 49.99,
-    image: 'https://source.unsplash.com/featured/800x600?hoodie,sweatshirt',
+    image:
+      'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'hooded-sweatshirt',
     rating: 4.6,
     reviewCount: 156,
@@ -233,7 +247,8 @@ export const PRODUCTS: Product[] = [
     name: 'Athletic Sneakers',
     price: 69.99,
     comparePrice: 89.99,
-    image: 'https://source.unsplash.com/featured/800x600?sneakers,shoes',
+    image:
+      'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'athletic-sneakers',
     rating: 4.4,
     reviewCount: 134,
@@ -246,7 +261,8 @@ export const PRODUCTS: Product[] = [
     name: 'Summer Dress',
     price: 59.99,
     comparePrice: 79.99,
-    image: 'https://source.unsplash.com/featured/800x600?summer,dress',
+    image:
+      'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'summer-dress',
     rating: 4.2,
     reviewCount: 98,
@@ -259,7 +275,8 @@ export const PRODUCTS: Product[] = [
     name: 'Casual Button-Down Shirt',
     price: 29.99,
     comparePrice: 39.99,
-    image: 'https://source.unsplash.com/featured/800x600?shirt,button-down',
+    image:
+      'https://images.pexels.com/photos/3761118/pexels-photo-3761118.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'casual-button-down-shirt',
     rating: 4.1,
     reviewCount: 76,
@@ -272,7 +289,8 @@ export const PRODUCTS: Product[] = [
     name: 'Puffer Jacket',
     price: 99.99,
     comparePrice: 129.99,
-    image: 'https://source.unsplash.com/featured/800x600?puffer,jacket',
+    image:
+      'https://images.pexels.com/photos/6770498/pexels-photo-6770498.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'puffer-jacket',
     rating: 4.6,
     reviewCount: 88,
@@ -285,7 +303,8 @@ export const PRODUCTS: Product[] = [
     name: 'Yoga Pants',
     price: 34.99,
     comparePrice: 44.99,
-    image: 'https://source.unsplash.com/featured/800x600?yoga,pants',
+    image:
+      'https://images.pexels.com/photos/6311687/pexels-photo-6311687.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'yoga-pants',
     rating: 4.7,
     reviewCount: 220,
@@ -298,7 +317,8 @@ export const PRODUCTS: Product[] = [
     name: 'Baseball Cap',
     price: 14.99,
     comparePrice: 19.99,
-    image: 'https://source.unsplash.com/featured/800x600?baseball,cap',
+    image:
+      'https://images.pexels.com/photos/1878821/pexels-photo-1878821.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'baseball-cap',
     rating: 4.0,
     reviewCount: 54,
@@ -311,7 +331,8 @@ export const PRODUCTS: Product[] = [
     name: 'Leather Belt',
     price: 24.99,
     comparePrice: 29.99,
-    image: 'https://source.unsplash.com/featured/800x600?leather,belt',
+    image:
+      'https://images.pexels.com/photos/984763/pexels-photo-984763.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'leather-belt',
     rating: 4.3,
     reviewCount: 60,
@@ -324,7 +345,8 @@ export const PRODUCTS: Product[] = [
     name: 'Running Shorts',
     price: 22.99,
     comparePrice: 27.99,
-    image: 'https://source.unsplash.com/featured/800x600?running,shorts',
+    image:
+      'https://images.pexels.com/photos/1340116/pexels-photo-1340116.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'running-shorts',
     rating: 4.2,
     reviewCount: 70,
@@ -337,7 +359,8 @@ export const PRODUCTS: Product[] = [
     name: 'Wool Scarf',
     price: 19.99,
     comparePrice: 24.99,
-    image: 'https://source.unsplash.com/featured/800x600?wool,scarf',
+    image:
+      'https://images.pexels.com/photos/1500735/pexels-photo-1500735.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'wool-scarf',
     rating: 4.5,
     reviewCount: 66,
@@ -352,7 +375,8 @@ export const PRODUCTS: Product[] = [
     name: 'Premium Coffee Maker',
     price: 149.99,
     comparePrice: null,
-    image: 'https://source.unsplash.com/featured/800x600?coffee,maker',
+    image:
+      'https://images.pexels.com/photos/5632408/pexels-photo-5632408.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'premium-coffee-maker',
     rating: 4.3,
     reviewCount: 56,
@@ -365,7 +389,8 @@ export const PRODUCTS: Product[] = [
     name: 'Stainless Steel Cookware Set',
     price: 129.99,
     comparePrice: 159.99,
-    image: 'https://source.unsplash.com/featured/800x600?cookware,set',
+    image:
+      'https://images.pexels.com/photos/6604471/pexels-photo-6604471.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'stainless-steel-cookware-set',
     rating: 4.5,
     reviewCount: 110,
@@ -378,7 +403,8 @@ export const PRODUCTS: Product[] = [
     name: 'Memory Foam Pillow',
     price: 29.99,
     comparePrice: 39.99,
-    image: 'https://source.unsplash.com/featured/800x600?memory,foam,pillow',
+    image:
+      'https://images.pexels.com/photos/6489083/pexels-photo-6489083.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'memory-foam-pillow',
     rating: 4.6,
     reviewCount: 140,
@@ -391,7 +417,8 @@ export const PRODUCTS: Product[] = [
     name: 'Decorative Indoor Plant',
     price: 24.99,
     comparePrice: 29.99,
-    image: 'https://source.unsplash.com/featured/800x600?indoor,plant',
+    image:
+      'https://images.pexels.com/photos/1084188/pexels-photo-1084188.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'decorative-indoor-plant',
     rating: 4.7,
     reviewCount: 80,
@@ -404,7 +431,8 @@ export const PRODUCTS: Product[] = [
     name: 'LED Desk Lamp',
     price: 34.99,
     comparePrice: 44.99,
-    image: 'https://source.unsplash.com/featured/800x600?desk,lamp',
+    image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'led-desk-lamp',
     rating: 4.4,
     reviewCount: 95,
@@ -417,7 +445,8 @@ export const PRODUCTS: Product[] = [
     name: 'Non-Stick Baking Set',
     price: 39.99,
     comparePrice: 49.99,
-    image: 'https://source.unsplash.com/featured/800x600?baking,set',
+    image:
+      'https://images.pexels.com/photos/8524147/pexels-photo-8524147.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'non-stick-baking-set',
     rating: 4.3,
     reviewCount: 72,
@@ -430,7 +459,8 @@ export const PRODUCTS: Product[] = [
     name: 'Bamboo Cutting Board',
     price: 19.99,
     comparePrice: 24.99,
-    image: 'https://source.unsplash.com/featured/800x600?bamboo,cutting,board',
+    image:
+      'https://images.pexels.com/photos/4207892/pexels-photo-4207892.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'bamboo-cutting-board',
     rating: 4.5,
     reviewCount: 88,
@@ -443,7 +473,8 @@ export const PRODUCTS: Product[] = [
     name: 'Vacuum Cleaner (Bagless)',
     price: 99.99,
     comparePrice: 129.99,
-    image: 'https://source.unsplash.com/featured/800x600?vacuum,cleaner',
+    image:
+      'https://images.pexels.com/photos/4792479/pexels-photo-4792479.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'vacuum-cleaner-bagless',
     rating: 4.1,
     reviewCount: 65,
@@ -456,7 +487,8 @@ export const PRODUCTS: Product[] = [
     name: 'Ceramic Dinnerware Set (16pc)',
     price: 79.99,
     comparePrice: 99.99,
-    image: 'https://source.unsplash.com/featured/800x600?dinnerware,ceramic',
+    image:
+      'https://images.pexels.com/photos/7049823/pexels-photo-7049823.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'ceramic-dinnerware-set-16pc',
     rating: 4.2,
     reviewCount: 58,
@@ -469,7 +501,8 @@ export const PRODUCTS: Product[] = [
     name: 'Air Purifier with HEPA Filter',
     price: 129.99,
     comparePrice: 149.99,
-    image: 'https://source.unsplash.com/featured/800x600?air,purifier,hepa',
+    image:
+      'https://images.pexels.com/photos/7752652/pexels-photo-7752652.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'air-purifier-hepa',
     rating: 4.6,
     reviewCount: 120,
@@ -482,7 +515,8 @@ export const PRODUCTS: Product[] = [
     name: 'Essential Oil Diffuser',
     price: 24.99,
     comparePrice: 29.99,
-    image: 'https://source.unsplash.com/featured/800x600?oil,diffuser,aroma',
+    image:
+      'https://images.pexels.com/photos/2629631/pexels-photo-2629631.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'essential-oil-diffuser',
     rating: 4.4,
     reviewCount: 102,
@@ -495,7 +529,8 @@ export const PRODUCTS: Product[] = [
     name: 'All-Season Duvet Comforter',
     price: 59.99,
     comparePrice: 79.99,
-    image: 'https://source.unsplash.com/featured/800x600?duvet,comforter',
+    image:
+      'https://images.pexels.com/photos/4203080/pexels-photo-4203080.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'all-season-duvet-comforter',
     rating: 4.5,
     reviewCount: 90,
@@ -510,7 +545,8 @@ export const PRODUCTS: Product[] = [
     name: 'Yoga Mat (Non-Slip)',
     price: 24.99,
     comparePrice: 29.99,
-    image: 'https://source.unsplash.com/featured/800x600?yoga,mat',
+    image:
+      'https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'yoga-mat-non-slip',
     rating: 4.6,
     reviewCount: 140,
@@ -523,7 +559,8 @@ export const PRODUCTS: Product[] = [
     name: 'Adjustable Dumbbells (Pair)',
     price: 79.99,
     comparePrice: 99.99,
-    image: 'https://source.unsplash.com/featured/800x600?dumbbells,weights',
+    image:
+      'https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'adjustable-dumbbells-pair',
     rating: 4.4,
     reviewCount: 100,
@@ -536,7 +573,8 @@ export const PRODUCTS: Product[] = [
     name: 'Running Shoes',
     price: 69.99,
     comparePrice: 89.99,
-    image: 'https://source.unsplash.com/featured/800x600?running,shoes',
+    image:
+      'https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'running-shoes',
     rating: 4.5,
     reviewCount: 160,
@@ -549,7 +587,8 @@ export const PRODUCTS: Product[] = [
     name: 'Fitness Resistance Bands',
     price: 19.99,
     comparePrice: 24.99,
-    image: 'https://source.unsplash.com/featured/800x600?resistance,bands',
+    image:
+      'https://images.pexels.com/photos/4162489/pexels-photo-4162489.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'fitness-resistance-bands',
     rating: 4.3,
     reviewCount: 85,
@@ -562,7 +601,8 @@ export const PRODUCTS: Product[] = [
     name: 'Mountain Bike Helmet',
     price: 49.99,
     comparePrice: 59.99,
-    image: 'https://source.unsplash.com/featured/800x600?bike,helmet',
+    image:
+      'https://images.pexels.com/photos/1239599/pexels-photo-1239599.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'mountain-bike-helmet',
     rating: 4.2,
     reviewCount: 70,
@@ -576,7 +616,7 @@ export const PRODUCTS: Product[] = [
     price: 14.99,
     comparePrice: 19.99,
     image:
-      'https://source.unsplash.com/featured/800x600?stainless,water,bottle',
+      'https://images.pexels.com/photos/2330169/pexels-photo-2330169.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'stainless-steel-water-bottle',
     rating: 4.7,
     reviewCount: 200,
@@ -589,7 +629,8 @@ export const PRODUCTS: Product[] = [
     name: 'Tennis Racket',
     price: 59.99,
     comparePrice: 79.99,
-    image: 'https://source.unsplash.com/featured/800x600?tennis,racket',
+    image:
+      'https://images.pexels.com/photos/1454530/pexels-photo-1454530.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'tennis-racket',
     rating: 4.1,
     reviewCount: 66,
@@ -602,7 +643,8 @@ export const PRODUCTS: Product[] = [
     name: 'Football (Match Quality)',
     price: 29.99,
     comparePrice: 34.99,
-    image: 'https://source.unsplash.com/featured/800x600?football,soccer,ball',
+    image:
+      'https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'football-match-quality',
     rating: 4.3,
     reviewCount: 90,
@@ -615,7 +657,8 @@ export const PRODUCTS: Product[] = [
     name: 'Cycling Gloves',
     price: 17.99,
     comparePrice: 22.99,
-    image: 'https://source.unsplash.com/featured/800x600?cycling,gloves',
+    image:
+      'https://images.pexels.com/photos/248559/pexels-photo-248559.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'cycling-gloves',
     rating: 4.2,
     reviewCount: 58,
@@ -628,7 +671,8 @@ export const PRODUCTS: Product[] = [
     name: 'Jump Rope',
     price: 12.99,
     comparePrice: 14.99,
-    image: 'https://source.unsplash.com/featured/800x600?jump,rope',
+    image:
+      'https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'jump-rope',
     rating: 4.0,
     reviewCount: 44,
@@ -641,7 +685,8 @@ export const PRODUCTS: Product[] = [
     name: 'Basketball',
     price: 24.99,
     comparePrice: 29.99,
-    image: 'https://source.unsplash.com/featured/800x600?basketball,ball',
+    image:
+      'https://images.pexels.com/photos/6386/person-woman-hand-relaxing-6386.jpg?auto=compress&cs=tinysrgb&w=800',
     slug: 'basketball',
     rating: 4.4,
     reviewCount: 76,
@@ -654,7 +699,8 @@ export const PRODUCTS: Product[] = [
     name: 'Home Gym Pull-Up Bar',
     price: 34.99,
     comparePrice: 39.99,
-    image: 'https://source.unsplash.com/featured/800x600?pull-up,bar,gym',
+    image:
+      'https://images.pexels.com/photos/6740871/pexels-photo-6740871.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'home-gym-pull-up-bar',
     rating: 4.3,
     reviewCount: 82,
@@ -670,7 +716,7 @@ export const PRODUCTS: Product[] = [
     price: 24.99,
     comparePrice: 29.99,
     image:
-      'https://source.unsplash.com/featured/800x600?coding,programming,book',
+      'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'the-art-of-coding',
     rating: 4.7,
     reviewCount: 210,
@@ -683,7 +729,8 @@ export const PRODUCTS: Product[] = [
     name: 'Mystery in the Mountains',
     price: 14.99,
     comparePrice: 19.99,
-    image: 'https://source.unsplash.com/featured/800x600?mystery,novel,book',
+    image:
+      'https://images.pexels.com/photos/762687/pexels-photo-762687.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'mystery-in-the-mountains',
     rating: 4.2,
     reviewCount: 88,
@@ -696,7 +743,8 @@ export const PRODUCTS: Product[] = [
     name: 'Cooking for Beginners',
     price: 19.99,
     comparePrice: 24.99,
-    image: 'https://source.unsplash.com/featured/800x600?cooking,book',
+    image:
+      'https://images.pexels.com/photos/261986/pexels-photo-261986.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'cooking-for-beginners',
     rating: 4.4,
     reviewCount: 120,
@@ -709,7 +757,8 @@ export const PRODUCTS: Product[] = [
     name: 'Gardening Made Easy',
     price: 16.99,
     comparePrice: 21.99,
-    image: 'https://source.unsplash.com/featured/800x600?gardening,book',
+    image:
+      'https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'gardening-made-easy',
     rating: 4.3,
     reviewCount: 75,
@@ -722,7 +771,8 @@ export const PRODUCTS: Product[] = [
     name: 'History of Ancient Worlds',
     price: 22.99,
     comparePrice: 27.99,
-    image: 'https://source.unsplash.com/featured/800x600?ancient,history,book',
+    image:
+      'https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'history-of-ancient-worlds',
     rating: 4.1,
     reviewCount: 64,
@@ -735,7 +785,8 @@ export const PRODUCTS: Product[] = [
     name: 'Science Facts and Wonders',
     price: 21.99,
     comparePrice: 26.99,
-    image: 'https://source.unsplash.com/featured/800x600?science,book',
+    image:
+      'https://images.pexels.com/photos/256450/pexels-photo-256450.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'science-facts-and-wonders',
     rating: 4.5,
     reviewCount: 98,
@@ -748,7 +799,8 @@ export const PRODUCTS: Product[] = [
     name: 'Fantasy Realms: Book One',
     price: 17.99,
     comparePrice: 22.99,
-    image: 'https://source.unsplash.com/featured/800x600?fantasy,novel,book',
+    image:
+      'https://images.pexels.com/photos/1314410/pexels-photo-1314410.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'fantasy-realms-book-one',
     rating: 4.0,
     reviewCount: 55,
@@ -761,7 +813,8 @@ export const PRODUCTS: Product[] = [
     name: 'Business Strategy Essentials',
     price: 26.99,
     comparePrice: 31.99,
-    image: 'https://source.unsplash.com/featured/800x600?business,book',
+    image:
+      'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'business-strategy-essentials',
     rating: 4.3,
     reviewCount: 85,
@@ -774,7 +827,8 @@ export const PRODUCTS: Product[] = [
     name: 'Photography Basics',
     price: 18.99,
     comparePrice: 23.99,
-    image: 'https://source.unsplash.com/featured/800x600?photography,book',
+    image:
+      'https://images.pexels.com/photos/3190334/pexels-photo-3190334.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'photography-basics',
     rating: 4.2,
     reviewCount: 70,
@@ -787,7 +841,8 @@ export const PRODUCTS: Product[] = [
     name: 'Health & Wellness Guide',
     price: 20.99,
     comparePrice: 25.99,
-    image: 'https://source.unsplash.com/featured/800x600?health,wellness,book',
+    image:
+      'https://images.pexels.com/photos/4195505/pexels-photo-4195505.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'health-and-wellness-guide',
     rating: 4.4,
     reviewCount: 92,
@@ -800,7 +855,8 @@ export const PRODUCTS: Product[] = [
     name: 'Travel the World on a Budget',
     price: 23.99,
     comparePrice: 28.99,
-    image: 'https://source.unsplash.com/featured/800x600?travel,book',
+    image:
+      'https://images.pexels.com/photos/433309/pexels-photo-433309.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'travel-the-world-on-a-budget',
     rating: 4.1,
     reviewCount: 66,
@@ -814,7 +870,7 @@ export const PRODUCTS: Product[] = [
     price: 19.99,
     comparePrice: 24.99,
     image:
-      'https://source.unsplash.com/featured/800x600?mindfulness,meditation,book',
+      'https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=800',
     slug: 'mindfulness-and-meditation',
     rating: 4.5,
     reviewCount: 140,
