@@ -62,12 +62,12 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-blue-100 via-white to-blue-300 backdrop-blur supports-[backdrop-filter]:bg-blue-50/60">
       {/* Main header */}
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Brand (text-only, no logo) */}
-          <Link href="/" className="text-xl font-bold text-primary">
+          <Link href="/" className="text-4xl font-extrabold text-primary">
             Allora mart
           </Link>
 

@@ -462,7 +462,7 @@ export default function CheckoutPage() {
                         A confirmation email has been sent to {shippingAddress.email}
                       </p>
                     </div>
-                    <div className="flex space-x-4 justify-center">
+                    <div className="flex space-x-4 justify-center mb-4">
                       <Button asChild>
                         <Link href="/account">View Order History</Link>
                       </Button>
@@ -470,6 +470,42 @@ export default function CheckoutPage() {
                         <Link href="/products">Continue Shopping</Link>
                       </Button>
                     </div>
+                    <Button
+                      variant="secondary"
+                      onClick={() => {
+                        const billHtml = `<!DOCTYPE html>
+                          <html><head><title>Allora Mart Bill</title>
+                          <style>body{font-family:sans-serif;background:#f8f8ff;padding:2rem;}h1{font-size:1.5rem;}table{width:100%;border-collapse:collapse;}th,td{border:1px solid #ddd;padding:8px;}th{background:#eee;}</style>
+                          </head><body>
+                          <h1>Allora Mart - Bill</h1>
+                          <p><strong>Order Number:</strong> VBC-2024-{Math.floor(Math.random() * 10000)}</p>
+                          <p><strong>Date:</strong> ${new Date().toLocaleDateString()}</p>
+                          <h2>Shipping To:</h2>
+                          <p>${shippingAddress.firstName} ${shippingAddress.lastName}<br>${shippingAddress.address1}${shippingAddress.address2 ? ', ' + shippingAddress.address2 : ''}<br>${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipCode}<br>${shippingAddress.country}</p>
+                          <h2>Items</h2>
+                          <table><thead><tr><th>Product</th><th>Qty</th><th>Price</th></tr></thead><tbody>
+                          ${items.map(item => `<tr><td>${item.name}</td><td>${item.quantity}</td><td>${(item.price * item.quantity).toFixed(2)}</td></tr>`).join('')}
+                          </tbody></table>
+                          <h2>Summary</h2>
+                          <p><strong>Subtotal:</strong> ${subtotal.toFixed(2)}<br>
+                          <strong>Shipping:</strong> ${shippingCost === 0 ? 'Free' : shippingCost.toFixed(2)}<br>
+                          <strong>Tax:</strong> ${tax.toFixed(2)}<br>
+                          <strong>Total:</strong> ${total.toFixed(2)}</p>
+                          <p>Thank you for shopping with Allora Mart!</p>
+                          </body></html>`;
+                        const blob = new Blob([billHtml], { type: 'text/html' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'allora-mart-bill.html';
+                        document.body.appendChild(a);
+                        a.click();
+                        setTimeout(() => {
+                          document.body.removeChild(a);
+                          URL.revokeObjectURL(url);
+                        }, 100);
+                      }}
+                    >Download Bill</Button>
                   </CardContent>
                 </Card>
               </div>

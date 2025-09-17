@@ -90,7 +90,7 @@ export default function SignUpPage() {
         {/* Brand (text-only, no logo) */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <span className="text-2xl font-bold">Allora mart</span>
+            <span className="text-4xl font-extrabold text-primary drop-shadow-lg">Allora mart</span>
           </div>
           <h1 className="text-2xl font-bold">Create account</h1>
           <p className="text-muted-foreground">Join us today and start shopping</p>

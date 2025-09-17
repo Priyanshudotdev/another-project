@@ -127,9 +127,9 @@ export default function AccountPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+  <div className="min-h-screen bg-gradient-to-br from-purple-100 via-white to-purple-300">
       {/* Header */}
-      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div className="border-b bg-gradient-to-r from-purple-200 via-white to-purple-300 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -139,10 +139,9 @@ export default function AccountPage() {
                   Back to Home
                 </Link>
               </Button>
-              <h1 className="text-2xl font-bold">My Account</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-purple-200 to-purple-500 bg-clip-text text-transparent">My Account</h1>
             </div>
-            
-            <Button variant="outline" size="sm" onClick={handleSignOut}>
+            <Button variant="outline" size="sm" onClick={handleSignOut} className="border-purple-400 text-purple-700 hover:bg-purple-100">
               <LogOut className="h-4 w-4 mr-2" />
               Sign Out
             </Button>
@@ -366,16 +365,14 @@ export default function AccountPage() {
                             <p className="text-sm text-muted-foreground">Placed on {new Date(order.createdAt).toLocaleDateString()}</p>
                           </div>
                           <div className="text-right">
-                            <p className="font-semibold">${order.total.toFixed(2)}</p>
+                            <p className="font-semibold">{order.total.toFixed(2)}</p>
                             {getStatusBadge(order.status)}
                           </div>
                         </div>
-                        
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-4">
                             <span className="text-sm text-muted-foreground">{order.items.length} item{order.items.length !== 1 ? 's' : ''}</span>
                           </div>
-                          
                           <div className="space-x-2">
                             <Button variant="outline" size="sm" asChild>
                               <Link href={`/track-order?order=${order.id}`}>
@@ -385,6 +382,38 @@ export default function AccountPage() {
                             <Button variant="outline" size="sm">
                               View Details
                             </Button>
+                            <Button
+                              variant="secondary"
+                              size="sm"
+                              onClick={() => {
+                                const billHtml = `<!DOCTYPE html>
+                                  <html><head><title>Allora Mart Bill</title>
+                                  <style>body{font-family:sans-serif;background:#f8f8ff;padding:2rem;}h1{font-size:1.5rem;}table{width:100%;border-collapse:collapse;}th,td{border:1px solid #ddd;padding:8px;}th{background:#eee;}</style>
+                                  </head><body>
+                                  <h1>Allora Mart - Bill</h1>
+                                  <p><strong>Order Number:</strong> ${order.orderNumber}</p>
+                                  <p><strong>Date:</strong> ${new Date(order.createdAt).toLocaleDateString()}</p>
+                                  <h2>Items</h2>
+                                  <table><thead><tr><th>Product</th><th>Qty</th><th>Price</th></tr></thead><tbody>
+                                  ${order.items.map(item => `<tr><td>${item.id}</td><td>1</td><td>-</td></tr>`).join('')}
+                                  </tbody></table>
+                                  <h2>Summary</h2>
+                                  <p><strong>Total:</strong> ${order.total.toFixed(2)}</p>
+                                  <p>Thank you for shopping with Allora Mart!</p>
+                                  </body></html>`;
+                                const blob = new Blob([billHtml], { type: 'text/html' });
+                                const url = URL.createObjectURL(blob);
+                                const a = document.createElement('a');
+                                a.href = url;
+                                a.download = `allora-mart-bill-${order.orderNumber}.html`;
+                                document.body.appendChild(a);
+                                a.click();
+                                setTimeout(() => {
+                                  document.body.removeChild(a);
+                                  URL.revokeObjectURL(url);
+                                }, 100);
+                              }}
+                            >Download Bill</Button>
                           </div>
                         </div>
                       </div>

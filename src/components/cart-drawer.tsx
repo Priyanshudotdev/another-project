@@ -83,7 +83,7 @@ export function CartDrawer() {
                         {item.name}
                       </h4>
                       <p className="text-sm text-muted-foreground">
-                        ${item.price.toFixed(2)}
+                        {item.price.toFixed(2)}
                       </p>
                     </div>
 
@@ -131,7 +131,7 @@ export function CartDrawer() {
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">Total</span>
                     <span className="font-semibold text-lg">
-                      ${getTotalPrice().toFixed(2)}
+                      {getTotalPrice().toFixed(2)}
                     </span>
                   </div>
                 </div>

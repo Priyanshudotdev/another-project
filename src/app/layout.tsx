@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
+  <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-blue-700 via-blue-900 to-blue-950 text-foreground`}>
         <Providers>
           <AppChrome>
             {children}
