@@ -22,7 +22,7 @@ const categories = [
     name: "Clothing",
     icon: Shirt,
     href: "/category/clothing",
-    color: "bg-pink-100 text-pink-600",
+    color: "bg-blue-100 text-blue-600",
     productCount: 3420,
   },
   {

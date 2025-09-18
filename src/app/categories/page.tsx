@@ -43,7 +43,7 @@ const categories = [
     name: "Clothing",
     icon: Shirt,
     href: "/category/clothing",
-    color: "bg-pink-100 text-pink-600 dark:bg-pink-900/20 dark:text-pink-400",
+  color: "bg-blue-100 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400",
     productCount: 3420,
     subcategories: [
       { name: "Men's Clothing", count: 1200 },
