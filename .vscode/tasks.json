@@ -28,6 +28,37 @@
 			"command": "npm run build",
 			"isBackground": false,
 			"group": "build"
+		},
+		{
+			"label": "Typecheck Next.js project",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Restart custom Next server",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-Command",
+				"$env:PORT=3001; if (Get-Process -Name node -ErrorAction SilentlyContinue) { Get-Process node | Where-Object { $_.MainWindowTitle -like '*server.ts*' } | ForEach-Object { Stop-Process -Id $_.Id -Force } }; node server.ts"
+			],
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
 		}
 	]
 }

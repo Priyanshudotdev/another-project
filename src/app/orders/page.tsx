@@ -27,6 +27,7 @@ import {
   ArrowLeft
 } from "lucide-react";
 import Link from "next/link";
+import { formatINR } from "@/lib/currency";
 
 interface OrderItem {
   id: string;
@@ -73,8 +74,8 @@ interface Order {
 const statusConfig = {
   PENDING: { icon: Clock, label: "Pending", color: "bg-yellow-100 text-yellow-800" },
   CONFIRMED: { icon: FileText, label: "Confirmed", color: "bg-blue-100 text-blue-800" },
-  PROCESSING: { icon: Package, label: "Processing", color: "bg-purple-100 text-purple-800" },
-  SHIPPED: { icon: Truck, label: "Shipped", color: "bg-indigo-100 text-indigo-800" },
+  PROCESSING: { icon: Package, label: "Processing", color: "bg-blue-100 text-blue-800" },
+  SHIPPED: { icon: Truck, label: "Shipped", color: "bg-blue-100 text-blue-800" },
   DELIVERED: { icon: CheckCircle, label: "Delivered", color: "bg-green-100 text-green-800" },
   CANCELLED: { icon: XCircle, label: "Cancelled", color: "bg-red-100 text-red-800" },
   REFUNDED: { icon: XCircle, label: "Refunded", color: "bg-gray-100 text-gray-800" },
@@ -281,12 +282,12 @@ export default function OrdersPage() {
                               {item.product.name}
                             </Link>
                             <p className="text-sm text-muted-foreground">
-                              Qty: {item.quantity} • ${item.price.toFixed(2)} each
+                              Qty: {item.quantity} • {formatINR(item.price)} each
                             </p>
                           </div>
                           <div className="text-right">
                             <p className="font-medium">
-                              ${(item.price * item.quantity).toFixed(2)}
+                              {formatINR(item.price * item.quantity)}
                             </p>
                           </div>
                         </div>
@@ -326,19 +327,19 @@ export default function OrdersPage() {
                           <div className="space-y-1 text-sm">
                             <div className="flex justify-between">
                               <span>Subtotal:</span>
-                              <span>${order.subtotal.toFixed(2)}</span>
+                              <span>{formatINR(order.subtotal)}</span>
                             </div>
                             <div className="flex justify-between">
                               <span>Shipping:</span>
-                              <span>${order.shipping.toFixed(2)}</span>
+                              <span>{formatINR(order.shipping)}</span>
                             </div>
                             <div className="flex justify-between">
                               <span>Tax:</span>
-                              <span>${order.tax.toFixed(2)}</span>
+                              <span>{formatINR(order.tax)}</span>
                             </div>
                             <div className="flex justify-between font-medium pt-2 border-t">
                               <span>Total:</span>
-                              <span>${order.total.toFixed(2)}</span>
+                              <span>{formatINR(order.total)}</span>
                             </div>
                           </div>
                         </div>

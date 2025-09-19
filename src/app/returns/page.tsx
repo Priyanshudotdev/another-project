@@ -10,7 +10,7 @@ import {
   AlertTriangle,
   ArrowLeft,
   Truck,
-  DollarSign,
+  IndianRupee,
   Shield
 } from "lucide-react";
 import Link from "next/link";
@@ -67,7 +67,7 @@ const returnProcess = [
     title: "Refund or Exchange",
     description: "Receive your refund or exchange as requested",
     timeframe: "5-10 business days",
-    icon: DollarSign
+    icon: IndianRupee
   }
 ];
 
@@ -76,7 +76,7 @@ const refundOptions = [
     type: "Refund to Original Payment",
     description: "Refund issued to your original payment method",
     timeframe: "5-10 business days after processing",
-    icon: DollarSign
+    icon: IndianRupee
   },
   {
     type: "Store Credit",
@@ -444,8 +444,8 @@ export default function ReturnsPage() {
             
             <Card>
               <CardContent className="p-6">
-                <div className="w-12 h-12 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                  <Calendar className="h-6 w-6 text-purple-600" />
+                <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <Calendar className="h-6 w-6 text-blue-600" />
                 </div>
                 <h3 className="font-semibold mb-2">Late Returns</h3>
                 <p className="text-sm text-muted-foreground">

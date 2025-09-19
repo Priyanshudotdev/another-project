@@ -81,7 +81,7 @@ const categories = [
     name: "Books & Media",
     icon: BookOpen,
     href: "/category/books",
-    color: "bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400",
+    color: "bg-blue-100 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400",
     productCount: 2100,
     subcategories: [
       { name: "Fiction", count: 800 },
@@ -94,7 +94,7 @@ const categories = [
     name: "Gaming",
     icon: Gamepad2,
     href: "/category/gaming",
-    color: "bg-indigo-100 text-indigo-600 dark:bg-indigo-900/20 dark:text-indigo-400",
+    color: "bg-blue-100 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400",
     productCount: 480,
     subcategories: [
       { name: "Video Games", count: 280 },

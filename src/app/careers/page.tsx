@@ -9,7 +9,7 @@ import {
   Briefcase, 
   MapPin, 
   Clock, 
-  DollarSign,
+  IndianRupee,
   Users,
   Heart,
   ArrowLeft,
@@ -36,7 +36,7 @@ export default function CareersPage() {
       department: "engineering",
       location: "Remote",
       type: "Full-time",
-      salary: "$120k - $160k",
+  salary: "₹30L - ₹40L",
       experience: "5+ years",
       posted: "2 days ago",
       description: "We're looking for a talented Frontend Developer to join our engineering team and help build amazing user experiences.",
@@ -55,7 +55,7 @@ export default function CareersPage() {
       department: "design",
       location: "New York, NY",
       type: "Full-time",
-      salary: "$90k - $120k",
+  salary: "₹22L - ₹30L",
       experience: "3+ years",
       posted: "1 week ago",
       description: "Join our design team to create intuitive and beautiful user interfaces for our e-commerce platform.",
@@ -74,7 +74,7 @@ export default function CareersPage() {
       department: "marketing",
       location: "Remote",
       type: "Full-time",
-      salary: "$70k - $90k",
+  salary: "₹18L - ₹22L",
       experience: "2+ years",
       posted: "3 days ago",
       description: "Help us grow our brand and reach new customers through innovative digital marketing strategies.",
@@ -93,7 +93,7 @@ export default function CareersPage() {
       department: "customer-support",
       location: "Austin, TX",
       type: "Full-time",
-      salary: "$45k - $55k",
+  salary: "₹11L - ₹14L",
       experience: "1+ years",
       posted: "1 day ago",
       description: "Be the voice of VibeCart and help our customers have amazing shopping experiences.",
@@ -112,7 +112,7 @@ export default function CareersPage() {
       department: "engineering",
       location: "San Francisco, CA",
       type: "Full-time",
-      salary: "$140k - $180k",
+  salary: "₹35L - ₹45L",
       experience: "4+ years",
       posted: "1 week ago",
       description: "Help us scale our infrastructure and ensure our platform remains fast and reliable.",
@@ -131,7 +131,7 @@ export default function CareersPage() {
       department: "sales",
       location: "Chicago, IL",
       type: "Full-time",
-      salary: "$60k - $80k + Commission",
+  salary: "₹15L - ₹20L + Incentives",
       experience: "1+ years",
       posted: "4 days ago",
       description: "Drive revenue growth by identifying and qualifying new business opportunities.",
@@ -154,8 +154,8 @@ export default function CareersPage() {
   });
 
   const benefits = [
-    { icon: Heart, title: "Health & Wellness", description: "Comprehensive health, dental, and vision insurance for you and your family" },
-    { icon: DollarSign, title: "Competitive Compensation", description: "Salaries that match or exceed industry standards with regular reviews" },
+  { icon: Heart, title: "Health & Wellness", description: "Comprehensive health, dental, and vision insurance for you and your family" },
+  { icon: IndianRupee, title: "Competitive Compensation", description: "Salaries that match or exceed industry standards with regular reviews" },
     { icon: Clock, title: "Flexible Work", description: "Remote work options and flexible hours to support work-life balance" },
     { icon: Users, title: "Growth Opportunities", description: "Professional development budget and clear career advancement paths" },
     { icon: Building, title: "Modern Office", description: "Beautiful workspaces designed for collaboration and productivity" },
@@ -276,7 +276,7 @@ export default function CareersPage() {
                             {job.type}
                           </Badge>
                           <Badge variant="outline">
-                            <DollarSign className="h-3 w-3 mr-1" />
+                            <IndianRupee className="h-3 w-3 mr-1" />
                             {job.salary}
                           </Badge>
                         </div>

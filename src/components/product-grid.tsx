@@ -12,6 +12,7 @@ import {
   ArrowRight 
 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
+import { formatINR } from "@/lib/currency";
 
 // Mock product data - in a real app, this would come from an API
 const featuredProducts = [
@@ -181,11 +182,11 @@ function ProductCard({ product }: { product: typeof featuredProducts[0] }) {
         {/* Price */}
         <div className="flex items-center space-x-2">
           <span className="text-lg font-bold">
-            {product.price.toFixed(2)}
+            {formatINR(product.price)}
           </span>
           {product.comparePrice && (
             <span className="text-sm text-muted-foreground line-through">
-              {product.comparePrice.toFixed(2)}
+              {formatINR(product.comparePrice)}
             </span>
           )}
         </div>

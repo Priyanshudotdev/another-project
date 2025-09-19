@@ -9,7 +9,7 @@ import {
   Package, 
   ShoppingCart, 
   Users, 
-  DollarSign,
+  IndianRupee,
   TrendingUp,
   TrendingDown,
   Eye,
@@ -17,6 +17,7 @@ import {
   MoreHorizontal
 } from "lucide-react";
 import Link from "next/link";
+import { formatINR } from "@/lib/currency";
 
 interface DashboardStats {
   totalProducts: number;
@@ -158,11 +159,11 @@ export default function AdminDashboard() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
+              <IndianRupee className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
-                ${(stats?.totalRevenue || 0).toLocaleString()}
+                {formatINR(stats?.totalRevenue || 0)}
               </div>
               <p className="text-xs text-muted-foreground">
                 +20% from last month
@@ -193,7 +194,7 @@ export default function AdminDashboard() {
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="font-medium">${order.total.toFixed(2)}</p>
+                      <p className="font-medium">{formatINR(order.total)}</p>
                       <Badge 
                         variant={
                           order.status === "DELIVERED" ? "default" : 

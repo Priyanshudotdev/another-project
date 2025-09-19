@@ -18,10 +18,11 @@ import {
   User,
   MapPin,
   Calendar,
-  DollarSign,
+  IndianRupee,
   Eye
 } from "lucide-react";
 import Link from "next/link";
+import { formatINR } from "@/lib/currency";
 
 interface OrderItem {
   id: string;
@@ -71,8 +72,8 @@ interface Order {
 const statusConfig = {
   PENDING: { label: "Pending", color: "bg-yellow-100 text-yellow-800" },
   CONFIRMED: { label: "Confirmed", color: "bg-blue-100 text-blue-800" },
-  PROCESSING: { label: "Processing", color: "bg-purple-100 text-purple-800" },
-  SHIPPED: { label: "Shipped", color: "bg-indigo-100 text-indigo-800" },
+  PROCESSING: { label: "Processing", color: "bg-blue-100 text-blue-800" },
+  SHIPPED: { label: "Shipped", color: "bg-blue-100 text-blue-800" },
   DELIVERED: { label: "Delivered", color: "bg-green-100 text-green-800" },
   CANCELLED: { label: "Cancelled", color: "bg-red-100 text-red-800" },
   REFUNDED: { label: "Refunded", color: "bg-gray-100 text-gray-800" },
@@ -361,10 +362,7 @@ export default function AdminOrdersPage() {
                         </div>
                       </td>
                       <td className="p-4">
-                        <div className="font-medium">
-                          <DollarSign className="inline h-4 w-4" />
-                          {order.total.toFixed(2)}
-                        </div>
+                        <div className="font-medium">{formatINR(order.total)}</div>
                       </td>
                       <td className="p-4">
                         <Select

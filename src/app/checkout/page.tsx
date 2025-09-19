@@ -21,6 +21,7 @@ import {
   Lock
 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
+import { formatINR } from "@/lib/currency";
 
 export default function CheckoutPage() {
   const { items, getTotalItems, getTotalPrice, clearCart } = useCartStore();
@@ -286,7 +287,7 @@ export default function CheckoutPage() {
                                 <p className="text-sm text-muted-foreground">{option.days}</p>
                               </div>
                               <span className="font-medium">
-                                {option.price === 0 ? "Free" : `$${option.price.toFixed(2)}`}
+                                {option.price === 0 ? "Free" : formatINR(option.price)}
                               </span>
                             </div>
                           </Label>
@@ -484,13 +485,13 @@ export default function CheckoutPage() {
                           <p>${shippingAddress.firstName} ${shippingAddress.lastName}<br>${shippingAddress.address1}${shippingAddress.address2 ? ', ' + shippingAddress.address2 : ''}<br>${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipCode}<br>${shippingAddress.country}</p>
                           <h2>Items</h2>
                           <table><thead><tr><th>Product</th><th>Qty</th><th>Price</th></tr></thead><tbody>
-                          ${items.map(item => `<tr><td>${item.name}</td><td>${item.quantity}</td><td>${(item.price * item.quantity).toFixed(2)}</td></tr>`).join('')}
+                          ${items.map(item => `<tr><td>${item.name}</td><td>${item.quantity}</td><td>${formatINR(item.price * item.quantity)}</td></tr>`).join('')}
                           </tbody></table>
                           <h2>Summary</h2>
-                          <p><strong>Subtotal:</strong> ${subtotal.toFixed(2)}<br>
-                          <strong>Shipping:</strong> ${shippingCost === 0 ? 'Free' : shippingCost.toFixed(2)}<br>
-                          <strong>Tax:</strong> ${tax.toFixed(2)}<br>
-                          <strong>Total:</strong> ${total.toFixed(2)}</p>
+                          <p><strong>Subtotal:</strong> ${formatINR(subtotal)}<br>
+                          <strong>Shipping:</strong> ${shippingCost === 0 ? 'Free' : formatINR(shippingCost)}<br>
+                          <strong>Tax:</strong> ${formatINR(tax)}<br>
+                          <strong>Total:</strong> ${formatINR(total)}</p>
                           <p>Thank you for shopping with Allora Mart!</p>
                           </body></html>`;
                         const blob = new Blob([billHtml], { type: 'text/html' });
@@ -544,7 +545,7 @@ export default function CheckoutPage() {
                           <h4 className="text-sm font-medium line-clamp-1">{item.name}</h4>
                           <p className="text-xs text-muted-foreground">Qty: {item.quantity}</p>
                         </div>
-                        <p className="font-medium">${(item.price * item.quantity).toFixed(2)}</p>
+                        <p className="font-medium">{formatINR(item.price * item.quantity)}</p>
                       </div>
                     ))}
                   </div>
@@ -553,20 +554,20 @@ export default function CheckoutPage() {
                   <div className="border-t pt-4 space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>Subtotal</span>
-                      <span>${subtotal.toFixed(2)}</span>
+                      <span>{formatINR(subtotal)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span>Shipping</span>
-                      <span>{shippingCost === 0 ? "Free" : `$${shippingCost.toFixed(2)}`}</span>
+                      <span>{shippingCost === 0 ? "Free" : formatINR(shippingCost)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span>Tax</span>
-                      <span>${tax.toFixed(2)}</span>
+                      <span>{formatINR(tax)}</span>
                     </div>
                     <div className="border-t pt-2">
                       <div className="flex justify-between font-semibold">
                         <span>Total</span>
-                        <span>${total.toFixed(2)}</span>
+                        <span>{formatINR(total)}</span>
                       </div>
                     </div>
                   </div>

@@ -19,6 +19,7 @@ import {
   Plus,
   
 } from "lucide-react";
+import { formatINR } from "@/lib/currency";
 
 type Order = {
   id: string;
@@ -127,9 +128,9 @@ export default function AccountPage() {
   };
 
   return (
-  <div className="min-h-screen bg-gradient-to-br from-purple-100 via-white to-purple-300">
+  <div className="min-h-screen bg-gradient-to-br from-blue-100 via-blue-50 to-blue-200">
       {/* Header */}
-  <div className="border-b bg-gradient-to-r from-purple-200 via-white to-purple-300 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div className="border-b bg-gradient-to-r from-blue-200 via-blue-50 to-blue-300 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -139,9 +140,9 @@ export default function AccountPage() {
                   Back to Home
                 </Link>
               </Button>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-purple-200 to-purple-500 bg-clip-text text-transparent">My Account</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-400 to-blue-700 bg-clip-text text-transparent">My Account</h1>
             </div>
-            <Button variant="outline" size="sm" onClick={handleSignOut} className="border-purple-400 text-purple-700 hover:bg-purple-100">
+            <Button variant="outline" size="sm" onClick={handleSignOut} className="border-blue-400 text-blue-700 hover:bg-blue-100">
               <LogOut className="h-4 w-4 mr-2" />
               Sign Out
             </Button>
@@ -339,7 +340,7 @@ export default function AccountPage() {
                             </div>
                           </div>
                           <div className="text-right space-y-2">
-                            <p className="font-medium">${order.total.toFixed(2)}</p>
+                            <p className="font-medium">{formatINR(order.total)}</p>
                             {getStatusBadge(order.status)}
                           </div>
                         </div>
@@ -365,7 +366,7 @@ export default function AccountPage() {
                             <p className="text-sm text-muted-foreground">Placed on {new Date(order.createdAt).toLocaleDateString()}</p>
                           </div>
                           <div className="text-right">
-                            <p className="font-semibold">{order.total.toFixed(2)}</p>
+                            <p className="font-semibold">{formatINR(order.total)}</p>
                             {getStatusBadge(order.status)}
                           </div>
                         </div>
@@ -398,7 +399,7 @@ export default function AccountPage() {
                                   ${order.items.map(item => `<tr><td>${item.id}</td><td>1</td><td>-</td></tr>`).join('')}
                                   </tbody></table>
                                   <h2>Summary</h2>
-                                  <p><strong>Total:</strong> ${order.total.toFixed(2)}</p>
+                                  <p><strong>Total:</strong> ${formatINR(order.total)}</p>
                                   <p>Thank you for shopping with Allora Mart!</p>
                                   </body></html>`;
                                 const blob = new Blob([billHtml], { type: 'text/html' });

@@ -25,6 +25,7 @@ import {
   Search
 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
+import { formatINR } from "@/lib/currency";
 
 import { PRODUCTS, CATEGORIES, CATEGORY_ORDER, Product } from "@/lib/products";
 
@@ -135,11 +136,11 @@ function ProductCard({ product }: { product: Product }) {
         
         <div className="flex items-center space-x-2">
           <span className="text-lg font-bold">
-            ${product.price.toFixed(2)}
+            {formatINR(product.price)}
           </span>
           {product.comparePrice && (
             <span className="text-sm text-muted-foreground line-through">
-              ${product.comparePrice.toFixed(2)}
+              {formatINR(product.comparePrice)}
             </span>
           )}
         </div>
@@ -290,8 +291,8 @@ export default function ProductsPage() {
                     className="w-full"
                   />
                   <div className="flex justify-between text-sm text-muted-foreground">
-                    <span>${priceRange[0]}</span>
-                    <span>${priceRange[1]}</span>
+                    <span>{formatINR(priceRange[0])}</span>
+                    <span>{formatINR(priceRange[1])}</span>
                   </div>
                 </div>
               </div>

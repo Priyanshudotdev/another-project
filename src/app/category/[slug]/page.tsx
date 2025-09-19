@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Star } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
+import { formatINR } from "@/lib/currency";
 
 export default function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params);
@@ -45,10 +46,10 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
                   </Link>
                 </h3>
                 <div className="flex items-center space-x-2">
-                  <span className="text-lg font-bold">${p.price.toFixed(2)}</span>
+                  <span className="text-lg font-bold">{formatINR(p.price)}</span>
                   {p.comparePrice && (
                     <span className="text-sm text-muted-foreground line-through">
-                      ${p.comparePrice.toFixed(2)}
+                      {formatINR(p.comparePrice)}
                     </span>
                   )}
                 </div>

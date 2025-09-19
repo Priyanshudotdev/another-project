@@ -43,7 +43,7 @@ const categories = [
     name: "Books",
     icon: BookOpen,
     href: "/category/books",
-    color: "bg-purple-100 text-purple-600",
+    color: "bg-blue-100 text-blue-600",
     productCount: 2100,
   },
   {

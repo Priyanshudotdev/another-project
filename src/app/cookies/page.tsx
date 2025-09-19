@@ -150,7 +150,7 @@ export default function CookiesPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Settings className="h-5 w-5 text-purple-600" />
+                  <Settings className="h-5 w-5 text-blue-600" />
                   <span>Functional Cookies</span>
                 </CardTitle>
               </CardHeader>

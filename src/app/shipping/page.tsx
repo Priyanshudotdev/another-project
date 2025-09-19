@@ -23,13 +23,13 @@ export default function ShippingPage() {
       name: "Standard Shipping",
       price: "Free",
       deliveryTime: "5-7 business days",
-      description: "Free shipping on orders over $50",
+      description: "Free shipping on orders over ₹4,000",
       features: ["Order tracking", "Insurance included", "Delivery confirmation"]
     },
     {
       id: "express",
       name: "Express Shipping",
-      price: "$15.99",
+      price: "₹1,299",
       deliveryTime: "2-3 business days",
       description: "Faster delivery for urgent orders",
       features: ["Priority processing", "Real-time tracking", "Signature confirmation"]
@@ -37,7 +37,7 @@ export default function ShippingPage() {
     {
       id: "overnight",
       name: "Overnight Shipping",
-      price: "$29.99",
+      price: "₹2,499",
       deliveryTime: "1 business day",
       description: "Fastest delivery available",
       features: ["Same-day processing", "Guaranteed delivery", "White glove service"]
@@ -45,10 +45,10 @@ export default function ShippingPage() {
   ];
 
   const internationalRates = [
-    { region: "North America", price: "$12.99", time: "7-10 business days" },
-    { region: "Europe", price: "$19.99", time: "10-14 business days" },
-    { region: "Asia Pacific", price: "$24.99", time: "14-21 business days" },
-    { region: "Other Regions", price: "$29.99", time: "21-28 business days" }
+    { region: "North America", price: "₹1,099", time: "7-10 business days" },
+    { region: "Europe", price: "₹1,699", time: "10-14 business days" },
+    { region: "Asia Pacific", price: "₹2,099", time: "14-21 business days" },
+    { region: "Other Regions", price: "₹2,499", time: "21-28 business days" }
   ];
 
   const shippingRestrictions = [

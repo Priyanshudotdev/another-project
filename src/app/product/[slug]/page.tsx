@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingCart, Star, ArrowLeft } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
+import { formatINR } from "@/lib/currency";
 
 export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params);
@@ -48,9 +49,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             <span className="text-sm text-muted-foreground">{product.reviewCount} reviews</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-3xl font-bold">${product.price.toFixed(2)}</span>
+            <span className="text-3xl font-bold">{formatINR(product.price)}</span>
             {product.comparePrice && (
-              <span className="text-muted-foreground line-through">${product.comparePrice.toFixed(2)}</span>
+              <span className="text-muted-foreground line-through">{formatINR(product.comparePrice)}</span>
             )}
           </div>
           <div className="space-y-2 text-sm text-muted-foreground">
@@ -89,9 +90,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                     </Link>
                   </h3>
                   <div className="flex items-center space-x-2">
-                    <span className="text-lg font-bold">${p.price.toFixed(2)}</span>
+                    <span className="text-lg font-bold">{formatINR(p.price)}</span>
                     {p.comparePrice && (
-                      <span className="text-sm text-muted-foreground line-through">${p.comparePrice.toFixed(2)}</span>
+                      <span className="text-sm text-muted-foreground line-through">{formatINR(p.comparePrice)}</span>
                     )}
                   </div>
                   <Button size="sm" className="w-full" asChild>

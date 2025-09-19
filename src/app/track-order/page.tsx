@@ -16,6 +16,7 @@ import {
   ArrowLeft
 } from "lucide-react";
 import Link from "next/link";
+import { formatINR } from "@/lib/currency";
 
 export default function TrackOrderPage() {
   const [orderNumber, setOrderNumber] = useState("");
@@ -113,7 +114,7 @@ export default function TrackOrderPage() {
       case "ordered":
         return "bg-blue-500";
       case "confirmed":
-        return "bg-purple-500";
+        return "bg-blue-600";
       case "shipped":
         return "bg-orange-500";
       case "in-transit":
@@ -296,13 +297,13 @@ export default function TrackOrderPage() {
                             <p className="font-medium">{item.name}</p>
                             <p className="text-sm text-muted-foreground">Qty: {item.quantity}</p>
                           </div>
-                          <p className="font-semibold">${item.price.toFixed(2)}</p>
+                          <p className="font-semibold">{formatINR(item.price)}</p>
                         </div>
                       ))}
                       <div className="border-t pt-3">
                         <div className="flex justify-between font-semibold">
                           <span>Total</span>
-                          <span>${orderData.total.toFixed(2)}</span>
+                          <span>{formatINR(orderData.total)}</span>
                         </div>
                       </div>
                     </div>

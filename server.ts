@@ -5,8 +5,8 @@ import { Server } from 'socket.io';
 import next from 'next';
 
 const dev = process.env.NODE_ENV !== 'production';
-const currentPort = 4000;
-const hostname = '0.0.0.0';
+const currentPort = Number(process.env.PORT) || 3001;
+const hostname = process.env.HOST || '0.0.0.0';
 
 // Custom server with Socket.IO integration
 async function createCustomServer() {
@@ -24,10 +24,6 @@ async function createCustomServer() {
 
     // Create HTTP server that will handle both Next.js and Socket.IO
     const server = createServer((req, res) => {
-      // Skip socket.io requests from Next.js handler
-      if (req.url?.startsWith('/api/socketio')) {
-        return;
-      }
       handle(req, res);
     });
 

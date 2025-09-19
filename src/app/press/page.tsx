@@ -21,11 +21,11 @@ export default function PressPage() {
   const pressReleases = [
     {
       id: "1",
-      title: "VibeCart Raises $50M Series C to Expand Global Reach",
+  title: "VibeCart Raises ₹400Cr Series C to Expand Global Reach",
       date: "January 15, 2024",
       category: "Funding",
       excerpt: "Leading e-commerce platform secures major investment to accelerate international expansion and product innovation.",
-      content: "VibeCart announced today the successful completion of a $50 million Series C funding round led by Tech Ventures Partners, with participation from existing investors Global Capital and Innovation Fund.",
+  content: "VibeCart announced today the successful completion of a ₹400 crore Series C funding round led by Tech Ventures Partners, with participation from existing investors Global Capital and Innovation Fund.",
       image: "/placeholder-press.jpg"
     },
     {

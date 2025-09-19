@@ -20,6 +20,7 @@ import {
   X 
 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
+import { formatINR } from "@/lib/currency";
 
 export function CartDrawer() {
   const { items, removeItem, updateQuantity, getTotalPrice, getTotalItems } = useCartStore();
@@ -83,7 +84,7 @@ export function CartDrawer() {
                         {item.name}
                       </h4>
                       <p className="text-sm text-muted-foreground">
-                        {item.price.toFixed(2)}
+                        {formatINR(item.price)}
                       </p>
                     </div>
 
@@ -131,7 +132,7 @@ export function CartDrawer() {
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">Total</span>
                     <span className="font-semibold text-lg">
-                      {getTotalPrice().toFixed(2)}
+                      {formatINR(getTotalPrice())}
                     </span>
                   </div>
                 </div>

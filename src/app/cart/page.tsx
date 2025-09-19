@@ -15,6 +15,7 @@ import {
   Shield
 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
+import { formatINR } from "@/lib/currency";
 
 export default function CartPage() {
   const { items, updateQuantity, removeItem, getTotalItems, getTotalPrice } = useCartStore();
@@ -100,7 +101,7 @@ export default function CartPage() {
                             </Link>
                           </h3>
                           <p className="text-sm text-muted-foreground">
-                            ${item.price.toFixed(2)}
+                            {formatINR(item.price)}
                           </p>
                         </div>
                         <Button
@@ -146,7 +147,7 @@ export default function CartPage() {
                       {/* Subtotal */}
                       <div className="text-right">
                         <p className="font-semibold">
-                          ${(item.price * item.quantity).toFixed(2)}
+                          {formatINR(item.price * item.quantity)}
                         </p>
                       </div>
                     </div>
@@ -165,7 +166,7 @@ export default function CartPage() {
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span>Subtotal ({getTotalItems()} items)</span>
-                    <span>${getTotalPrice().toFixed(2)}</span>
+                    <span>{formatINR(getTotalPrice())}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span>Shipping</span>
@@ -173,12 +174,12 @@ export default function CartPage() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span>Tax</span>
-                    <span>${(getTotalPrice() * 0.08).toFixed(2)}</span>
+                    <span>{formatINR(getTotalPrice() * 0.08)}</span>
                   </div>
                   <div className="border-t pt-2">
                     <div className="flex justify-between font-semibold">
                       <span>Total</span>
-                      <span>${(getTotalPrice() * 1.08).toFixed(2)}</span>
+                      <span>{formatINR(getTotalPrice() * 1.08)}</span>
                     </div>
                   </div>
                 </div>
@@ -204,7 +205,7 @@ export default function CartPage() {
                   </div>
                   <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                     <Truck className="h-4 w-4 text-primary" />
-                    <span>Free shipping on orders over $50</span>
+                    <span>Free shipping on orders over ₹4,000</span>
                   </div>
                 </div>
               </CardContent>
@@ -239,7 +240,7 @@ export default function CartPage() {
                       </div>
                       <div className="flex-1">
                         <p className="text-sm font-medium line-clamp-1">{product.name}</p>
-                        <p className="text-sm text-muted-foreground">${product.price.toFixed(2)}</p>
+                        <p className="text-sm text-muted-foreground">{formatINR(product.price)}</p>
                       </div>
                       <Button variant="outline" size="sm">
                         Add

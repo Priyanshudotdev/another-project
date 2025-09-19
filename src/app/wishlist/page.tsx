@@ -16,6 +16,7 @@ import {
   Grid,
   List
 } from "lucide-react";
+import { formatINR } from "@/lib/currency";
 
 // Mock wishlist data
 const wishlistItems = [
@@ -264,11 +265,11 @@ export default function WishlistPage() {
                       
                       <div className="flex items-center space-x-2">
                         <span className="text-lg font-bold">
-                          {item.price.toFixed(2)}
+                          {formatINR(item.price)}
                         </span>
                         {item.comparePrice && (
                           <span className="text-sm text-muted-foreground line-through">
-                            {item.comparePrice.toFixed(2)}
+                            {formatINR(item.comparePrice)}
                           </span>
                         )}
                       </div>
@@ -358,11 +359,11 @@ export default function WishlistPage() {
                         
                         <div className="flex items-center space-x-2">
                           <span className="text-lg font-bold">
-                            ${item.price.toFixed(2)}
+                            {formatINR(item.price)}
                           </span>
                           {item.comparePrice && (
                             <span className="text-sm text-muted-foreground line-through">
-                              ${item.comparePrice.toFixed(2)}
+                              {formatINR(item.comparePrice)}
                             </span>
                           )}
                         </div>
@@ -398,7 +399,7 @@ export default function WishlistPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">
-                            {items.reduce((total, item) => total + item.price, 0).toFixed(2)}
+                            {formatINR(items.reduce((total, item) => total + item.price, 0))}
               </div>
               <div className="text-sm text-muted-foreground">Total Value</div>
             </div>

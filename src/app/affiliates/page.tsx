@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { 
   Users, 
-  DollarSign, 
+  IndianRupee, 
   TrendingUp, 
   Gift,
   Star,
@@ -41,7 +41,7 @@ export default function AffiliatesPage() {
 
   const benefits = [
     {
-      icon: DollarSign,
+      icon: IndianRupee,
       title: "Competitive Commissions",
       description: "Earn up to 15% commission on every sale you refer"
     },
@@ -65,27 +65,27 @@ export default function AffiliatesPage() {
   const commissionTiers = [
     {
       tier: "Bronze",
-      sales: "$0 - $5,000",
+      sales: "₹0 - ₹5,00,000",
       rate: "5%",
       color: "bg-orange-100 text-orange-800"
     },
     {
       tier: "Silver",
-      sales: "$5,001 - $15,000",
+      sales: "₹5,00,001 - ₹15,00,000",
       rate: "8%",
       color: "bg-gray-100 text-gray-800"
     },
     {
       tier: "Gold",
-      sales: "$15,001 - $50,000",
+      sales: "₹15,00,001 - ₹50,00,000",
       rate: "12%",
       color: "bg-yellow-100 text-yellow-800"
     },
     {
       tier: "Platinum",
-      sales: "$50,001+",
+      sales: "₹50,00,001+",
       rate: "15%",
-      color: "bg-purple-100 text-purple-800"
+      color: "bg-blue-100 text-blue-800"
     }
   ];
 
@@ -116,21 +116,21 @@ export default function AffiliatesPage() {
     {
       name: "Sarah Johnson",
       role: "Fashion Blogger",
-      earnings: "$12,500/month",
+      earnings: "₹12,50,000/month",
       comment: "VibeCart's affiliate program has transformed my blog into a thriving business. The commissions are generous and the support is amazing!",
       avatar: "/placeholder-avatar.jpg"
     },
     {
       name: "Mike Chen",
       role: "Tech Reviewer",
-      earnings: "$8,200/month",
+      earnings: "₹8,20,000/month",
       comment: "As a tech reviewer, I love promoting VibeCart products. The quality is excellent and my audience trusts my recommendations.",
       avatar: "/placeholder-avatar.jpg"
     },
     {
       name: "Emily Rodriguez",
       role: "Lifestyle Influencer",
-      earnings: "$15,800/month",
+      earnings: "₹15,80,000/month",
       comment: "The real-time analytics help me optimize my content strategy. VibeCart is my top-performing affiliate partner!",
       avatar: "/placeholder-avatar.jpg"
     }
@@ -195,7 +195,7 @@ export default function AffiliatesPage() {
           
           <Card className="text-center">
             <CardContent className="p-6 space-y-3">
-              <DollarSign className="h-8 w-8 text-primary mx-auto" />
+              <IndianRupee className="h-8 w-8 text-primary mx-auto" />
               <div className="text-2xl font-bold">15%</div>
               <div className="text-sm text-muted-foreground">Max Commission</div>
             </CardContent>
@@ -204,7 +204,7 @@ export default function AffiliatesPage() {
           <Card className="text-center">
             <CardContent className="p-6 space-y-3">
               <TrendingUp className="h-8 w-8 text-primary mx-auto" />
-              <div className="text-2xl font-bold">$2M+</div>
+              <div className="text-2xl font-bold">₹2Cr+</div>
               <div className="text-sm text-muted-foreground">Paid in Commissions</div>
             </CardContent>
           </Card>
@@ -314,7 +314,7 @@ export default function AffiliatesPage() {
                     "{testimonial.comment}"
                   </p>
                   <div className="flex items-center space-x-2">
-                    <DollarSign className="h-4 w-4 text-green-600" />
+                    <IndianRupee className="h-4 w-4 text-green-600" />
                     <span className="text-sm font-medium text-green-600">{testimonial.earnings}</span>
                   </div>
                 </CardContent>
